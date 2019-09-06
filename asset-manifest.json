@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.fe63bf67.chunk.css",
-    "main.js": "/static/js/main.c116e57b.chunk.js",
-    "main.js.map": "/static/js/main.c116e57b.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.3350cae7.js",
-    "runtime~main.js.map": "/static/js/runtime~main.3350cae7.js.map",
-    "static/js/2.1dc46d6c.chunk.js": "/static/js/2.1dc46d6c.chunk.js",
-    "static/js/2.1dc46d6c.chunk.js.map": "/static/js/2.1dc46d6c.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.4b2d28612b0d99ee693653cc783aa85c.js": "/precache-manifest.4b2d28612b0d99ee693653cc783aa85c.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.fe63bf67.chunk.css.map": "/static/css/main.fe63bf67.chunk.css.map"
+    "main.css": "/pama-demo-app/static/css/main.fe63bf67.chunk.css",
+    "main.js": "/pama-demo-app/static/js/main.5ee8f671.chunk.js",
+    "main.js.map": "/pama-demo-app/static/js/main.5ee8f671.chunk.js.map",
+    "runtime~main.js": "/pama-demo-app/static/js/runtime~main.63629d37.js",
+    "runtime~main.js.map": "/pama-demo-app/static/js/runtime~main.63629d37.js.map",
+    "static/js/2.f5b28ab3.chunk.js": "/pama-demo-app/static/js/2.f5b28ab3.chunk.js",
+    "static/js/2.f5b28ab3.chunk.js.map": "/pama-demo-app/static/js/2.f5b28ab3.chunk.js.map",
+    "index.html": "/pama-demo-app/index.html",
+    "precache-manifest.2b96313a8801ba55bc754fef84cff83f.js": "/pama-demo-app/precache-manifest.2b96313a8801ba55bc754fef84cff83f.js",
+    "service-worker.js": "/pama-demo-app/service-worker.js",
+    "static/css/main.fe63bf67.chunk.css.map": "/pama-demo-app/static/css/main.fe63bf67.chunk.css.map"
   }
 }
