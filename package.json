@@ -2,7 +2,7 @@
   "name": "pama-demo-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jmandel.github.io/pama-demo-app",
+  "homepage": "https://github.com/cds-hooks/pama-demo-app",
   "dependencies": {
     "debounce": "^1.2.0",
     "fhirclient": "^2.1.0",

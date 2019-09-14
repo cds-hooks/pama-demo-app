@@ -13,14 +13,27 @@ let targetOrigin;
 
 const onAuthorized = new Promise((resolve, reject) => {
   if (query.iss) {
-    FHIR.oauth2.authorize({
+    const options = {
       client_id: "my_web_app",
       scope: "patient/*.read"
-    });
+    };
+
+    if (query.iss.startsWith('https://fhir-ehr.sandboxcerner.com')) {
+      options.client_id = '3d8abe23-3b43-4122-b6f7-57c3d3c259db';
+      options.scope = 'patient/Patient.read'
+    }
+
+    FHIR.oauth2.authorize(options);
   } else if (query.state) {
     FHIR.oauth2.ready().then(client => {
-      targetOrigin = client.state.tokenResponse.smart_messaging_origin;
-      resolve(client.state.tokenResponse.appContext);
+      if (client.state.serverUrl && client.state.serverUrl.startsWith('https://fhir-ehr.sandboxcerner.com')) {
+        // Temporary pass-through parameter until first-class support built.
+        targetOrigin = client.state.tokenResponse.cerner_smart_messaging_origin;
+        resolve(client.state.tokenResponse.cerner_appContext);
+      } else {
+        targetOrigin = client.state.tokenResponse.smart_messaging_origin;
+        resolve(client.state.tokenResponse.appContext);
+      }
     });
   }
 });
