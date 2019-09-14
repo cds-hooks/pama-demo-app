@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/cds-hooks/pama-demo-app/static/css/main.7c84cd9b.chunk.css",
-    "main.js": "/cds-hooks/pama-demo-app/static/js/main.e00e966d.chunk.js",
-    "main.js.map": "/cds-hooks/pama-demo-app/static/js/main.e00e966d.chunk.js.map",
-    "runtime~main.js": "/cds-hooks/pama-demo-app/static/js/runtime~main.5cb761ca.js",
-    "runtime~main.js.map": "/cds-hooks/pama-demo-app/static/js/runtime~main.5cb761ca.js.map",
-    "static/js/2.cc1a7aec.chunk.js": "/cds-hooks/pama-demo-app/static/js/2.cc1a7aec.chunk.js",
-    "static/js/2.cc1a7aec.chunk.js.map": "/cds-hooks/pama-demo-app/static/js/2.cc1a7aec.chunk.js.map",
-    "index.html": "/cds-hooks/pama-demo-app/index.html",
-    "precache-manifest.7ebd9cea11a6b0f50ebabcdbc8451b3d.js": "/cds-hooks/pama-demo-app/precache-manifest.7ebd9cea11a6b0f50ebabcdbc8451b3d.js",
-    "service-worker.js": "/cds-hooks/pama-demo-app/service-worker.js",
-    "static/css/main.7c84cd9b.chunk.css.map": "/cds-hooks/pama-demo-app/static/css/main.7c84cd9b.chunk.css.map"
+    "main.css": "/pama-demo-app/static/css/main.7c84cd9b.chunk.css",
+    "main.js": "/pama-demo-app/static/js/main.3ad80b73.chunk.js",
+    "main.js.map": "/pama-demo-app/static/js/main.3ad80b73.chunk.js.map",
+    "runtime~main.js": "/pama-demo-app/static/js/runtime~main.63629d37.js",
+    "runtime~main.js.map": "/pama-demo-app/static/js/runtime~main.63629d37.js.map",
+    "static/js/2.89df9450.chunk.js": "/pama-demo-app/static/js/2.89df9450.chunk.js",
+    "static/js/2.89df9450.chunk.js.map": "/pama-demo-app/static/js/2.89df9450.chunk.js.map",
+    "index.html": "/pama-demo-app/index.html",
+    "precache-manifest.647e6e460c216d34e1b67ca104518c2a.js": "/pama-demo-app/precache-manifest.647e6e460c216d34e1b67ca104518c2a.js",
+    "service-worker.js": "/pama-demo-app/service-worker.js",
+    "static/css/main.7c84cd9b.chunk.css.map": "/pama-demo-app/static/css/main.7c84cd9b.chunk.css.map"
   }
 }
