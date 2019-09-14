@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import uuid from "uuid";
 
 import FHIR from "fhirclient";
@@ -20,20 +20,19 @@ const onAuthorized = new Promise((resolve, reject) => {
   } else if (query.state) {
     FHIR.oauth2.ready().then(client => {
       targetOrigin = client.state.tokenResponse.smart_messaging_origin;
-      resolve(true);
+      resolve(client.state.tokenResponse.appContext);
     });
   }
 });
 
 
-const submitOrder = () => {
+const submitOrder = (doctoredProposal) => {
+  const proposal = JSON.parse(doctoredProposal.value);
   targetWindow.postMessage(
     {
       messageId: uuid.v4(),
       messageType: "scratchpad.update",
-      payload: {
-        resource: fixtureProposal
-      }
+      payload: { resource: proposal },
     },
     targetOrigin
   );
@@ -47,23 +46,38 @@ const submitOrder = () => {
   );
 };
 
+function extractServiceRequestId(serviceRequest) {
+  return serviceRequest.split('/')[1];
+}
+
 function App() {
   let [authorized, setAuthorized] = useState(false);
+  let [requestContext, setRequestContext] = useState({selections: []});
 
   useEffect(() => {
-    onAuthorized.then(a => setAuthorized(true));
-  });
+    onAuthorized.then(appContext => {
+      setAuthorized(true);
+      setRequestContext(JSON.parse(appContext));
+    });
+  }, []);
+
+  let proposal = {};
+  let doctoredProposal = useRef();
+  const ready = targetWindow && targetOrigin && authorized && requestContext.selections.length;
+  if (ready) {
+    const id = extractServiceRequestId(requestContext.selections[0]);
+    proposal = Object.assign(fixtureProposal, { id });
+  }
 
   return (
     <div className="App">
-      Looks like you're trying to place a PAMA order. Let me recommend my
-      favorite...
-      {(targetWindow && targetOrigin && authorized && (
+      Looks like you're trying to place a PAMA order.  Here is an example for you to edit...
+      {(ready && (
         <>
           <div>
-            <button onClick={submitOrder}>Update order</button>
+            <button onClick={(e) => submitOrder(doctoredProposal.current)}>Update order</button>
           </div>
-          <pre>{JSON.stringify(fixtureProposal, null, 2)}</pre>
+          <textarea ref={doctoredProposal}>{JSON.stringify(proposal, null, 2)}</textarea>
         </>
       )) || " (once things are ready)."}
     </div>
