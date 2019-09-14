@@ -26,15 +26,11 @@ const onAuthorized = new Promise((resolve, reject) => {
     FHIR.oauth2.authorize(options);
   } else if (query.state) {
     FHIR.oauth2.ready().then(client => {
-      console.log(`query is ${JSON.stringify(client)}`);
       if (client.state.serverUrl && client.state.serverUrl.startsWith('https://fhir-ehr.sandboxcerner.com')) {
         // Temporary pass-through parameter until first-class support built.
-        console.log('in Cerner logic!');
         targetOrigin = client.state.tokenResponse.cerner_smart_messaging_origin;
         resolve(client.state.tokenResponse.cerner_appContext);
       } else {
-        console.log('non-Cerner here')
-        console.log(`client.state.tokenResponse.appContext is ${client.state.tokenResponse.appContext}`);
         targetOrigin = client.state.tokenResponse.smart_messaging_origin;
         resolve(client.state.tokenResponse.appContext);
       }
@@ -73,7 +69,6 @@ function App() {
 
   useEffect(() => {
     onAuthorized.then(appContext => {
-      console.log(`app context is ${JSON.stringify(appContext)}`);
       setAuthorized(true);
       setRequestContext(JSON.parse(appContext));
     });
